@@ -1,0 +1,20 @@
+{
+  "name": "css-path",
+  "repo": "timoxley/css-path",
+  "description": "Get CSS path to a dom element.",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "timoxley/indexof": "*"
+  },
+  "development": {
+    "timoxley/element-selector": "*",
+    "component/domify": "*",
+    "component/assert": "*",
+    "timoxley/xpath": "*",
+    "timoxley/xpath2css": "*"
+  },
+  "scripts": [
+    "index.js"
+  ]
+}
