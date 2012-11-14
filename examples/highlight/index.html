@@ -1,0 +1,84 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/build/build.css" type="text/css" />
+</head>
+<body>
+<h3>Path:</h3>
+<code id="result"></code>
+
+<h1>HTML Ipsum Presents</h1>
+
+<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+
+<h2>Header Level 2</h2>
+
+<ol>
+   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+   <li>Aliquam tincidunt mauris eu risus.</li>
+</ol>
+
+<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
+
+<h3>Header Level 3</h3>
+
+<ul>
+   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+   <li>Aliquam tincidunt mauris eu risus.</li>
+</ul>
+
+<div class="page">
+  <h4 id="header3">Header Level 4</h4>
+
+  <ul class="list">
+     <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+     <li>Aliquam tincidunt mauris eu risus.</li>
+  </ul>
+</div>
+
+<pre><code>
+#header h1 a {
+	display: block;
+	width: 300px;
+	height: 80px;
+}
+</code></pre>
+<script src="/build/build.js" ></script>
+<script>
+  var CSSPath = require('css-path')
+  var ElementSelector = require('timoxley-element-selector')
+  var elementSelector = ElementSelector()
+  var result = document.getElementById('result')
+
+  var selected = false
+  elementSelector.on('select', function(el) {
+    selected = true
+    printPath(el)
+  })
+
+  elementSelector.on('highlight', function(el) {
+    if (selected) return
+    printPath(el)
+  })
+
+  function printPath(el) {
+    if (el == result) return
+    var cssPath = CSSPath(el)
+    // remove select/highlight class
+    cssPath = cssPath.replace('.highlighted', '')
+    cssPath = cssPath.replace('.selected', '')
+
+    result.style.color = 'black'
+    result.innerText = cssPath
+    var items = document.querySelectorAll(cssPath)
+    if (items.length !== 0 && items.length > 1) {
+      console.error('bad selector', cssPath, items)
+      result.style.color = 'red'
+    }
+  }
+
+  elementSelector.on('deselect', function(el) {
+    selected = false
+  })
+</script>
+</body>
+</html>
