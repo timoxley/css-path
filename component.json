@@ -2,7 +2,7 @@
   "name": "css-path",
   "repo": "timoxley/css-path",
   "description": "Get CSS path to a dom element.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": [],
   "dependencies": {
     "timoxley/indexof": "*"
