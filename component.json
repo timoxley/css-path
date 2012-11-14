@@ -10,9 +10,7 @@
   "development": {
     "timoxley/element-selector": "*",
     "component/domify": "*",
-    "component/assert": "*",
-    "timoxley/xpath": "*",
-    "timoxley/xpath2css": "*"
+    "timoxley/assert": "*"
   },
   "scripts": [
     "index.js"
