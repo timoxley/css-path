@@ -1,6 +1,23 @@
-
 # css-path
 
-  Get CSS path to a dom element.
+  Get absolute path to a DOM element as a CSS selector.
 
-## WIP.
+## Example
+
+```js
+<div class="page">
+  <h3 id="header">Header Level 3</h3>
+  <ul class="list">
+     <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+     <li>Aliquam tincidunt mauris eu risus.</li>
+  </ul>
+</div>
+```
+CSS path of first `li`:
+```js
+<pre><code></code></pre>
+```
+
+## Licence
+
+  MIT
