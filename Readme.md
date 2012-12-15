@@ -15,7 +15,7 @@
 ```
 CSS path of first `li`:
 ```html
-<pre><code></code></pre>
+body > div.page:nth-child(1) > ul.list:nth-child(2) > li:nth-child(1)
 ```
 
 ## Licence
