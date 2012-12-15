@@ -4,7 +4,7 @@
 
 ## Example
 
-```js
+```html
 <div class="page">
   <h3 id="header">Header Level 3</h3>
   <ul class="list">
@@ -14,7 +14,7 @@
 </div>
 ```
 CSS path of first `li`:
-```js
+```html
 <pre><code></code></pre>
 ```
 
